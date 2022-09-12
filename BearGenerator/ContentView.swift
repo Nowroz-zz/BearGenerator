@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var offsetAmount = CGSize.zero
+    @State private var accumulatedAmount = CGSize.zero
+    
+    @State private var scaleAmount = 1.0
+    
+    @State private var width = 200
+    @State private var height = 400
+    
+    @State private var url = URL(string: "https://placebear.com/200/400")
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -23,11 +33,22 @@ struct ContentView: View {
                 
                 GeometryReader { geoProxy in
                     ZStack {
-                        AsyncImage(url: URL(string: "https://placebear.com/200/400")) { phase in
+                        AsyncImage(url: url) { phase in
                             if let image = phase.image {
                                 image
                                     .resizable()
                                     .scaledToFit()
+                                    .scaleEffect(scaleAmount)
+                                    .offset(offsetAmount)
+                                    .gesture(
+                                        DragGesture()
+                                            .onChanged { value in
+                                                offsetAmount = CGSize(width: value.translation.width + accumulatedAmount.width, height: value.translation.height + accumulatedAmount.height)
+                                            }
+                                            .onEnded { value in
+                                                accumulatedAmount = offsetAmount
+                                            }
+                                    )
                             } else if phase.error != nil {
                                 Text("There was an error loading the image.")
                             } else {
@@ -40,7 +61,8 @@ struct ContentView: View {
                                 Spacer()
                                 
                                 Button {
-                                    
+                                    offsetAmount = .zero
+                                    accumulatedAmount = .zero
                                 } label: {
                                     Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
                                 }
@@ -56,17 +78,19 @@ struct ContentView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(.brown, lineWidth: 3)
                     )
+                    .clipped()
                 }
                 .padding(.vertical)
                 
                 HStack {
-                    Slider(value: .constant(0.5), in: 0.3...2.0)
+                    Slider(value: $scaleAmount, in: 0.3...3.0)
                     
                     Button {
-                        
+                        scaleAmount = 1.0
                     } label: {
                         Image(systemName: "arrow.counterclockwise")
                     }
+                    .disabled(scaleAmount == 1.0 ? true : false)
                 }
                 .padding(.vertical)
                 
@@ -74,7 +98,7 @@ struct ContentView: View {
                     HStack {
                         Text("Width")
                         
-                        TextField("Amount", value: .constant(300), format: .number)
+                        TextField("Amount", value: $width, format: .number)
                             .padding(.horizontal)
                             .background(.brown)
                             .clipShape(Capsule())
@@ -83,7 +107,7 @@ struct ContentView: View {
                     HStack {
                         Text("Height")
                         
-                        TextField("Amount", value: .constant(400), format: .number)
+                        TextField("Amount", value: $height, format: .number)
                             .padding(.horizontal)
                             .background(.brown)
                             .clipShape(Capsule())
@@ -91,10 +115,12 @@ struct ContentView: View {
                 }
                 .padding(.vertical)
                 
-                Button("Generate") { }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.secondary)
-                    .padding(.vertical)
+                Button("Generate") {
+                    url = URL(string: "https://placebear.com/\(width)/\(height)")
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.secondary)
+                .padding(.vertical)
             }
             .navigationTitle("BearGenerator")
             .padding(.horizontal)
