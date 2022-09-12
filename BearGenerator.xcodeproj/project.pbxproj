@@ -11,6 +11,7 @@
 		CEA68D1B28CE711100ED0D0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA68D1A28CE711100ED0D0F /* ContentView.swift */; };
 		CEA68D1D28CE711200ED0D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA68D1C28CE711200ED0D0F /* Assets.xcassets */; };
 		CEA68D2028CE711200ED0D0F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA68D1F28CE711200ED0D0F /* Preview Assets.xcassets */; };
+		CEE3353028CF9C5E00434792 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3352F28CF9C5E00434792 /* ContentView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		CEA68D1A28CE711100ED0D0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEA68D1C28CE711200ED0D0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEA68D1F28CE711200ED0D0F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEE3352F28CF9C5E00434792 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				CEA68D1828CE711100ED0D0F /* BearGeneratorApp.swift */,
 				CEA68D1A28CE711100ED0D0F /* ContentView.swift */,
+				CEE3352F28CF9C5E00434792 /* ContentView-ViewModel.swift */,
 				CEA68D1C28CE711200ED0D0F /* Assets.xcassets */,
 				CEA68D1E28CE711200ED0D0F /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA68D1B28CE711100ED0D0F /* ContentView.swift in Sources */,
+				CEE3353028CF9C5E00434792 /* ContentView-ViewModel.swift in Sources */,
 				CEA68D1928CE711100ED0D0F /* BearGeneratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
