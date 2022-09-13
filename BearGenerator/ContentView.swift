@@ -25,26 +25,7 @@ struct ContentView: View {
                 
                 GeometryReader { geoProxy in
                     ZStack {
-                        if let uiImage = viewModel.uiImage {
-                            Image(uiImage: uiImage)
-                                .resizable()
-                                .scaledToFit()
-                                .scaleEffect(viewModel.scaleAmount)
-                                .offset(viewModel.offsetAmount)
-                                .gesture(
-                                    DragGesture()
-                                        .onChanged { value in
-                                            viewModel.changeOffset(to: value)
-                                        }
-                                        .onEnded { _ in
-                                            viewModel.updateOffsetAccumulation()
-                                        }
-                                )
-                        } else {
-                            Text("Press the Generate button to download image.")
-                                .padding(.horizontal)
-                                .font(.caption)
-                        }
+                        BearImageView(viewModel: viewModel)
                         
                         VStack {
                             HStack {

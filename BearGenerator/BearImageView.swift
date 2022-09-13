@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct BearImageView: View {
+    @ObservedObject var viewModel: ContentView.ViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let uiImage = viewModel.uiImage {
+            Image(uiImage: uiImage)
+                .resizable()
+                .scaledToFit()
+                .scaleEffect(viewModel.scaleAmount)
+                .offset(viewModel.offsetAmount)
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            viewModel.changeOffset(to: value)
+                        }
+                        .onEnded { _ in
+                            viewModel.updateOffsetAccumulation()
+                        }
+                )
+        } else {
+            Text("Press the Generate button to download image.")
+                .padding(.horizontal)
+                .font(.caption)
+        }
     }
 }
 
 struct BearImageView_Previews: PreviewProvider {
+    private static var viewModel = ContentView.ViewModel()
+    
     static var previews: some View {
-        BearImageView()
+        BearImageView(viewModel: viewModel)
     }
 }
