@@ -11,7 +11,10 @@ import SwiftUI
 extension ContentView {
     @MainActor
     class ViewModel: ObservableObject {
-        @Published private(set) var url = URL(string: "https://placebear.com/200/400")
+        
+        @Published private(set) var uiImage: UIImage?
+        
+        private var url: URL! = URL(string: "https://placebear.com/200/400")
         
         @Published private(set) var offsetAmount = CGSize.zero
         var accumulatedOffsetAmount = CGSize.zero
@@ -21,8 +24,12 @@ extension ContentView {
         var width = 200
         var height = 400
         
-        func generate() {
+        func generate() async {
             url = URL(string: "https://placebear.com/\(width)/\(height)")
+            
+            if let (data, _) = try? await URLSession.shared.data(from: url) {
+                uiImage = UIImage(data: data)
+            }
         }
         
         func changeOffset(to value: DragGesture.Value) {

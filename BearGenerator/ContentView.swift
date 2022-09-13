@@ -25,27 +25,25 @@ struct ContentView: View {
                 
                 GeometryReader { geoProxy in
                     ZStack {
-                        AsyncImage(url: viewModel.url) { phase in
-                            if let image = phase.image {
-                                image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .scaleEffect(viewModel.scaleAmount)
-                                    .offset(viewModel.offsetAmount)
-                                    .gesture(
-                                        DragGesture()
-                                            .onChanged { value in
-                                                viewModel.changeOffset(to: value)
-                                            }
-                                            .onEnded { _ in
-                                                viewModel.updateOffsetAccumulation()
-                                            }
-                                    )
-                            } else if phase.error != nil {
-                                Text("There was an error loading the image.")
-                            } else {
-                                ProgressView()
-                            }
+                        if let uiImage = viewModel.uiImage {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFit()
+                                .scaleEffect(viewModel.scaleAmount)
+                                .offset(viewModel.offsetAmount)
+                                .gesture(
+                                    DragGesture()
+                                        .onChanged { value in
+                                            viewModel.changeOffset(to: value)
+                                        }
+                                        .onEnded { _ in
+                                            viewModel.updateOffsetAccumulation()
+                                        }
+                                )
+                        } else {
+                            Text("Press the Generate button to download image.")
+                                .padding(.horizontal)
+                                .font(.caption)
                         }
                         
                         VStack {
@@ -107,7 +105,9 @@ struct ContentView: View {
                 .padding(.vertical)
                 
                 Button("Generate") {
-                    viewModel.generate()
+                    Task {
+                        await viewModel.generate()
+                    }
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.secondary)
