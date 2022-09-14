@@ -14,6 +14,8 @@ extension ContentView {
         
         @Published private(set) var uiImage: UIImage?
         
+        @Published var showingConfirmationDialog = false
+        
         private var url: URL! = URL(string: "https://placebear.com/200/400")
         
         @Published private(set) var offsetAmount = CGSize.zero
@@ -53,10 +55,25 @@ extension ContentView {
             scaleAmount == 1.0 ? true : false
         }
         
+        func askConfirmation() {
+            guard let _ = uiImage else { return }
+            
+            showingConfirmationDialog = true
+        }
+        
         func save() {
             guard let uiImage = uiImage else { return }
             
             let imageSaver = ImageSaver()
+            
+            imageSaver.successHandler = {
+                print("The image is saved successfully.")
+            }
+            
+            imageSaver.errorHandler = {
+                print("Could not save the image: \($0.localizedDescription)")
+            }
+            
             imageSaver.writeToPhotoAlbum(image: uiImage)
         }
     }

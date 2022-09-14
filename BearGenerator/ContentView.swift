@@ -98,8 +98,11 @@ struct ContentView: View {
             .padding(.horizontal)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { viewModel.save() }
+                    Button("Save") { viewModel.askConfirmation() }
                 }
+            }
+            .confirmationDialog("Save image to photos library?", isPresented: $viewModel.showingConfirmationDialog) {
+                Button("Save") { viewModel.save() }
             }
         }
         .preferredColorScheme(.dark)
