@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1BC99F28D2542100B3B3EA /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BC99E28D2542100B3B3EA /* ImageSaver.swift */; };
 		CEA68D1928CE711100ED0D0F /* BearGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA68D1828CE711100ED0D0F /* BearGeneratorApp.swift */; };
 		CEA68D1B28CE711100ED0D0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA68D1A28CE711100ED0D0F /* ContentView.swift */; };
 		CEA68D1D28CE711200ED0D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA68D1C28CE711200ED0D0F /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1BC99E28D2542100B3B3EA /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		CEA68D1528CE711100ED0D0F /* BearGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA68D1828CE711100ED0D0F /* BearGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearGeneratorApp.swift; sourceTree = "<group>"; };
 		CEA68D1A28CE711100ED0D0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				CEA68D1828CE711100ED0D0F /* BearGeneratorApp.swift */,
 				CEA68D1A28CE711100ED0D0F /* ContentView.swift */,
+				CE1BC99E28D2542100B3B3EA /* ImageSaver.swift */,
 				CEB3DB7428D12F490007CB0B /* BearImageView.swift */,
 				CEE3352F28CF9C5E00434792 /* ContentView-ViewModel.swift */,
 				CEA68D1C28CE711200ED0D0F /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			files = (
 				CEA68D1B28CE711100ED0D0F /* ContentView.swift in Sources */,
 				CEE3353028CF9C5E00434792 /* ContentView-ViewModel.swift in Sources */,
+				CE1BC99F28D2542100B3B3EA /* ImageSaver.swift in Sources */,
 				CEB3DB7528D12F490007CB0B /* BearImageView.swift in Sources */,
 				CEA68D1928CE711100ED0D0F /* BearGeneratorApp.swift in Sources */,
 			);
