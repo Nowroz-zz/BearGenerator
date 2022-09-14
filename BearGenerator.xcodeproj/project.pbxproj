@@ -15,6 +15,7 @@
 		CEB3DB7528D12F490007CB0B /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3DB7428D12F490007CB0B /* ImageView.swift */; };
 		CEE3353028CF9C5E00434792 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3352F28CF9C5E00434792 /* ContentView-ViewModel.swift */; };
 		CEE7016128D273A2005A6FE9 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7016028D273A2005A6FE9 /* PickerView.swift */; };
+		CEE7016328D27694005A6FE9 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7016228D27694005A6FE9 /* SliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CEB3DB7428D12F490007CB0B /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		CEE3352F28CF9C5E00434792 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		CEE7016028D273A2005A6FE9 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		CEE7016228D27694005A6FE9 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				CEA68D1828CE711100ED0D0F /* BearGeneratorApp.swift */,
 				CEA68D1A28CE711100ED0D0F /* ContentView.swift */,
+				CEE7016228D27694005A6FE9 /* SliderView.swift */,
 				CEE7016028D273A2005A6FE9 /* PickerView.swift */,
 				CE1BC99E28D2542100B3B3EA /* ImageSaver.swift */,
 				CEB3DB7428D12F490007CB0B /* ImageView.swift */,
@@ -155,6 +158,7 @@
 				CE1BC99F28D2542100B3B3EA /* ImageSaver.swift in Sources */,
 				CEB3DB7528D12F490007CB0B /* ImageView.swift in Sources */,
 				CEA68D1928CE711100ED0D0F /* BearGeneratorApp.swift in Sources */,
+				CEE7016328D27694005A6FE9 /* SliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
