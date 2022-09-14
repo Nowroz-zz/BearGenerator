@@ -13,16 +13,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("Select image type")
-                    
-                    Spacer()
-                    
-                    Picker("Select image type", selection: $viewModel.selectedType) {
-                        ForEach(viewModel.types, id:\.self) { Text($0) }
-                    }
-                }
-                .padding(.vertical)
+                PickerView(viewModel: viewModel)
+                    .padding(.vertical)
                 
                 GeometryReader { geoProxy in
                     ZStack {
