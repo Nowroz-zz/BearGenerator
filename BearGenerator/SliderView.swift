@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct SliderView: View {
+    @ObservedObject var viewModel: ContentView.ViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: "magnifyingglass")
+            
+            Slider(value: $viewModel.scaleAmount, in: 0.3...3.0)
+            
+            Button {
+                viewModel.resetScaleAmount()
+            } label: {
+                Image(systemName: "arrow.counterclockwise")
+            }
+            .disabled(viewModel.isDisabled())
+        }
     }
 }
 
 struct SliderView_Previews: PreviewProvider {
+    private static var viewModel = ContentView.ViewModel()
+    
     static var previews: some View {
-        SliderView()
+        SliderView(viewModel: viewModel)
     }
 }

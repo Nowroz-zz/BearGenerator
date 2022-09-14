@@ -45,17 +45,8 @@ struct ContentView: View {
                 }
                 .padding(.vertical)
                 
-                HStack {
-                    Slider(value: $viewModel.scaleAmount, in: 0.3...3.0)
-                    
-                    Button {
-                        viewModel.resetScaleAmount()
-                    } label: {
-                        Image(systemName: "arrow.counterclockwise")
-                    }
-                    .disabled(viewModel.isDisabled())
-                }
-                .padding(.vertical)
+                SliderView(viewModel: viewModel)
+                    .padding(.vertical)
                 
                 VStack {
                     HStack {
