@@ -20,21 +20,8 @@ struct ContentView: View {
                     ZStack {
                         ImageView(viewModel: viewModel)
                         
-                        VStack {
-                            HStack {
-                                Spacer()
-                                
-                                Button {
-                                    viewModel.resetOffset()
-                                } label: {
-                                    Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
-                                }
-                                .tint(.white)
-                            }
-                            
-                            Spacer()
-                        }
-                        .padding()
+                        OffsetResetterView(viewModel: viewModel)
+                            .padding()
                     }
                     .frame(width: geoProxy.size.width, height: geoProxy.size.height)
                     .overlay(
