@@ -26,7 +26,7 @@ struct ContentView: View {
                 
                 GeometryReader { geoProxy in
                     ZStack {
-                        BearImageView(viewModel: viewModel)
+                        ImageView(viewModel: viewModel)
                         
                         VStack {
                             HStack {

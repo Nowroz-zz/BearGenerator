@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BearImageView: View {
+struct ImageView: View {
     @ObservedObject var viewModel: ContentView.ViewModel
     
     var body: some View {
@@ -38,6 +38,6 @@ struct BearImageView_Previews: PreviewProvider {
     private static var viewModel = ContentView.ViewModel()
     
     static var previews: some View {
-        BearImageView(viewModel: viewModel)
+        ImageView(viewModel: viewModel)
     }
 }
