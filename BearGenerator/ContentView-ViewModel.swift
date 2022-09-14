@@ -52,5 +52,12 @@ extension ContentView {
         func isDisabled() -> Bool {
             scaleAmount == 1.0 ? true : false
         }
+        
+        func save() {
+            guard let uiImage = uiImage else { return }
+            
+            let imageSaver = ImageSaver()
+            imageSaver.writeToPhotoAlbum(image: uiImage)
+        }
     }
 }

@@ -98,7 +98,7 @@ struct ContentView: View {
             .padding(.horizontal)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { }
+                    Button("Save") { viewModel.save() }
                 }
             }
         }
