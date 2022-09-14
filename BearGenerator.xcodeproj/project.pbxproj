@@ -17,6 +17,7 @@
 		CEE7016128D273A2005A6FE9 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7016028D273A2005A6FE9 /* PickerView.swift */; };
 		CEE7016328D27694005A6FE9 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7016228D27694005A6FE9 /* SliderView.swift */; };
 		CEE7016528D27B4F005A6FE9 /* MeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7016428D27B4F005A6FE9 /* MeasurementView.swift */; };
+		CEE7016728D27EE3005A6FE9 /* OffsetResetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7016628D27EE3005A6FE9 /* OffsetResetterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CEE7016028D273A2005A6FE9 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		CEE7016228D27694005A6FE9 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		CEE7016428D27B4F005A6FE9 /* MeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementView.swift; sourceTree = "<group>"; };
+		CEE7016628D27EE3005A6FE9 /* OffsetResetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetResetterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				CEA68D1828CE711100ED0D0F /* BearGeneratorApp.swift */,
 				CEA68D1A28CE711100ED0D0F /* ContentView.swift */,
+				CEE7016628D27EE3005A6FE9 /* OffsetResetterView.swift */,
 				CEE7016428D27B4F005A6FE9 /* MeasurementView.swift */,
 				CEE7016228D27694005A6FE9 /* SliderView.swift */,
 				CEE7016028D273A2005A6FE9 /* PickerView.swift */,
@@ -158,6 +161,7 @@
 				CEA68D1B28CE711100ED0D0F /* ContentView.swift in Sources */,
 				CEE7016528D27B4F005A6FE9 /* MeasurementView.swift in Sources */,
 				CEE3353028CF9C5E00434792 /* ContentView-ViewModel.swift in Sources */,
+				CEE7016728D27EE3005A6FE9 /* OffsetResetterView.swift in Sources */,
 				CEE7016128D273A2005A6FE9 /* PickerView.swift in Sources */,
 				CE1BC99F28D2542100B3B3EA /* ImageSaver.swift in Sources */,
 				CEB3DB7528D12F490007CB0B /* ImageView.swift in Sources */,
