@@ -48,26 +48,8 @@ struct ContentView: View {
                 SliderView(viewModel: viewModel)
                     .padding(.vertical)
                 
-                VStack {
-                    HStack {
-                        Text("Width")
-                        
-                        TextField("Amount", value: $viewModel.width, format: .number)
-                            .padding(.horizontal)
-                            .background(.brown)
-                            .clipShape(Capsule())
-                    }
-                    
-                    HStack {
-                        Text("Height")
-                        
-                        TextField("Amount", value: $viewModel.height, format: .number)
-                            .padding(.horizontal)
-                            .background(.brown)
-                            .clipShape(Capsule())
-                    }
-                }
-                .padding(.vertical)
+                MeasurementView(viewModel: viewModel)
+                    .padding(.vertical)
                 
                 Button("Generate") {
                     Task {
