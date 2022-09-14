@@ -12,11 +12,15 @@ extension ContentView {
     @MainActor
     class ViewModel: ObservableObject {
         
+        let types = ["Bear", "Dog", "Cat"]
+        
+        @Published var selectedType = "Dog"
+        
         @Published private(set) var uiImage: UIImage?
         
         @Published var showingConfirmationDialog = false
         
-        private var url: URL! = URL(string: "https://placebear.com/200/400")
+        private var url: URL!
         
         @Published private(set) var offsetAmount = CGSize.zero
         var accumulatedOffsetAmount = CGSize.zero
@@ -27,7 +31,14 @@ extension ContentView {
         var height = 400
         
         func generate() async {
-            url = URL(string: "https://placebear.com/\(width)/\(height)")
+            switch selectedType {
+            case "Bear":
+                url = URL(string: "https://placebear.com/\(width)/\(height)")
+            case "Dog":
+                url = URL(string: "https://place.dog/\(width)/\(height)")
+            default:
+                url = URL(string: "https://placekitten.com/\(width)/\(height)")
+            }
             
             if let (data, _) = try? await URLSession.shared.data(from: url) {
                 uiImage = UIImage(data: data)

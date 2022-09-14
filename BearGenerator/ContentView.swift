@@ -14,14 +14,15 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 HStack {
+                    Text("Select image type")
+                    
                     Spacer()
                     
-                    Button {
-                        
-                    } label: {
-                        Label("Edit", systemImage: "pencil")
+                    Picker("Select image type", selection: $viewModel.selectedType) {
+                        ForEach(viewModel.types, id:\.self) { Text($0) }
                     }
                 }
+                .padding(.vertical)
                 
                 GeometryReader { geoProxy in
                     ZStack {
@@ -94,7 +95,7 @@ struct ContentView: View {
                 .tint(.secondary)
                 .padding(.vertical)
             }
-            .navigationTitle("BearGenerator")
+            .navigationTitle("PlaceAnimals")
             .padding(.horizontal)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
