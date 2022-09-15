@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+struct TextFieldModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(.horizontal)
+            .background(.brown.opacity(0.85))
+            .clipShape(Capsule())
+        
+    }
+}
+
+extension View {
+    func modifyTextField() -> some View {
+        self
+            .modifier(TextFieldModifier())
+    }
+}
+
 struct MeasurementView: View {
     @ObservedObject var viewModel: ContentView.ViewModel
     
@@ -16,18 +33,14 @@ struct MeasurementView: View {
                 Text("Width")
                 
                 TextField("Amount", value: $viewModel.width, format: .number)
-                    .padding(.horizontal)
-                    .background(.brown.opacity(0.85))
-                    .clipShape(Capsule())
+                    .modifyTextField()
             }
             
             HStack {
                 Text("Height")
                 
                 TextField("Amount", value: $viewModel.height, format: .number)
-                    .padding(.horizontal)
-                    .background(.brown.opacity(0.85))
-                    .clipShape(Capsule())
+                    .modifyTextField()
             }
         }
     }
