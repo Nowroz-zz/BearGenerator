@@ -22,7 +22,9 @@ struct ImageView: View {
                 .gesture(
                     DragGesture()
                         .onChanged { value in
-                            viewModel.changeOffset(to: value)
+                            withAnimation() {
+                                viewModel.changeOffset(to: value)
+                            }
                         }
                         .onEnded { _ in
                             viewModel.updateOffsetAccumulation()

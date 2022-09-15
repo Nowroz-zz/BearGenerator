@@ -14,10 +14,12 @@ struct SliderView: View {
         HStack {
             Image(systemName: "magnifyingglass")
             
-            Slider(value: $viewModel.scaleAmount, in: 0.3...3.0)
+            Slider(value: $viewModel.scaleAmount.animation(), in: 0.3...3.0)
             
             Button {
-                viewModel.resetScaleAmount()
+                withAnimation() {
+                    viewModel.resetScaleAmount()
+                }
             } label: {
                 Image(systemName: "arrow.counterclockwise")
             }

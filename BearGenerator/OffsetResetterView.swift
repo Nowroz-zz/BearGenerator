@@ -16,7 +16,9 @@ struct OffsetResetterView: View {
                 Spacer()
                 
                 Button {
-                    viewModel.resetOffset()
+                    withAnimation() {
+                        viewModel.resetOffset()
+                    }
                 } label: {
                     Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
                 }
