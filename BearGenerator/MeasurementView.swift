@@ -17,7 +17,7 @@ struct MeasurementView: View {
                 
                 TextField("Amount", value: $viewModel.width, format: .number)
                     .padding(.horizontal)
-                    .background(.brown)
+                    .background(.brown.opacity(0.85))
                     .clipShape(Capsule())
             }
             
@@ -26,7 +26,7 @@ struct MeasurementView: View {
                 
                 TextField("Amount", value: $viewModel.height, format: .number)
                     .padding(.horizontal)
-                    .background(.brown)
+                    .background(.brown.opacity(0.85))
                     .clipShape(Capsule())
             }
         }

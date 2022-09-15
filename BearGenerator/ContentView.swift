@@ -16,21 +16,19 @@ struct ContentView: View {
                 PickerView(viewModel: viewModel)
                     .padding(.vertical)
                 
-                GeometryReader { geoProxy in
-                    ZStack {
-                        ImageView(viewModel: viewModel)
-                        
-                        OffsetResetterView(viewModel: viewModel)
-                            .padding()
-                    }
-                    .frame(width: geoProxy.size.width, height: geoProxy.size.height)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.brown, lineWidth: 3)
-                    )
-                    .clipped()
+                ZStack {
+                    ImageView(viewModel: viewModel)
+                        .clipped()
+                    
+                    OffsetResetterView(viewModel: viewModel)
+                        .padding()
                 }
-                .padding(.vertical)
+                .padding(.horizontal, 2)
+                .padding(.vertical, 2)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.brown, lineWidth: 4)
+                )
                 
                 SliderView(viewModel: viewModel)
                     .padding(.vertical)
@@ -58,7 +56,6 @@ struct ContentView: View {
                 Button("Save") { viewModel.save() }
             }
         }
-        .preferredColorScheme(.dark)
         .tint(.brown)
     }
 }

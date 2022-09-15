@@ -15,6 +15,8 @@ struct ImageView: View {
             Image(uiImage: uiImage)
                 .resizable()
                 .scaledToFit()
+                .padding()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .scaleEffect(viewModel.scaleAmount)
                 .offset(viewModel.offsetAmount)
                 .gesture(
